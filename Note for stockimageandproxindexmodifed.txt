@@ -1,0 +1,85 @@
+Notes for the program stockimageandproxindexmodifiedversion
+
+This programs reads two seperate stock data, plot its CGR and compaare them using k-mer index.
+
+At first you may have to create an excel file with the desired values along a single column . For our studies we have taken daily close values. 
+We have caluculated daily percentage changes (P) and used this value for bin divisions.
+
+The default bin divisions are 
+
+A. P < -0.01
+B. -0.01 >= P <0
+C. 0 > P <= 0.01
+D.  P > 0.01
+
+These can be modifed  accordingly by changing values for variable 'binbound' or directly in lines90 to 114.
+ 
+
+Input data
+
+Specify the name of excelfiles which contain stock data in 'filename' and 'filename1'.
+
+b1,b2,b3,b4,b5 and b6 corresponds to the order of the CGR plots. (default value is 4,5,6,7,8 and 9 respectivley)
+
+
+Outputs ( In workspace)
+
+no1-Absolute value of number of data points lying in binboundary 'A'  for the stock data specified in 'filename'.
+no2-Absolute value of number of data points lying in binboundary 'B'  for the stock data specified in 'filename'.
+no3-Absolute value of number of data points lying in binboundary 'C'  for the stock data specified in 'filename'.
+no4-Absolute value of number of data points lying in binboundary 'D'  for the stock data specified in 'filename'.
+
+
+noo1-Absolute value of number of data points lying in binboundary 'A'  for the stock data specified in 'filename1'.
+noo2-Absolute value of number of data points lying in binboundary 'B'  for the stock data specified in 'filename1'.
+noo3-Absolute value of number of data points lying in binboundary 'C'  for the stock data specified in 'filename1'.
+noo4-Absolute value of number of data points lying in binboundary 'D'  for the stock data specified in 'filename1'.
+
+
+percentno1- no1 in Percentage. 
+percentno2- no2 in Percentage.
+percentno3- no3 in Percentage.
+percentno4- no4 in Percentage.
+
+percentnoo1- noo1 in Percentage. 
+percentnoo2- noo2 in Percentage.
+percentnoo3- noo3 in Percentage.
+percentnoo4- noo4 in Percentage.
+
+similarityindexmatr- Row 1 :positive k-mer indices of order b1,b2,b3,b4,b5 and b6 respectivley.
+similarityindexmatr- Row 2 :Negative k-mer indices of order b1,b2,b3,b4,b5 and b6 respectivley. 
+ ( The sum of same order positive and negative k-mer indices should be 0).
+
+
+combinedfrbitbxad- boxadresses of CGR plot of order 'b1' (column 1 ) and its corresponding absolute and percentage values (col 2 and 3 respectivley) for 'filename'. 
+combinedfrbitbxad1- boxadresses of CGR plot of order 'b1' (column 1 ) and its corresponding absolute and percentage values (col 2 and 3 respectivley) for 'filename1'. 
+combinedfrbitbxadsub -boxadresses for subtraction plot (CGRplot of order b1 filename - CGRplot of oder b1 filename1)of order 'b1' (column 1 ) and its corresponding  values (col 2 ).
+
+(ABCD in adress corresponds to respective bin boundaries , in order use a diiferent set of characters or numerals to represent binboundaries modify the variable 'letters'.)
+
+
+combinedfivebitbxad,combinedsixbitbxad,combinedsevenbitbxad,combinedeitbitbxad,combinedninebitbxad :- Same as combinedthreebitbxad , but of order b2,b3,b4,b5and b6 respectivley.
+combinedfivebitbxad1,combinedsixbitbxad1,combinedsevenbitbxad1,combinedeitbitbxad1,combinedninebitbxad1 :- Same as combinedthreebitbxad1 , but of order b2,b3,b4,b5and b6 respectivley.
+combinedfivebitbxadsub,combinedsixbitbxadsub,combinedsevenbitbxadsub,combinedeitbitbxadsub,combinedninebitbxadsub:- Same as combinedthreebitbxadsub , but of order b2,b3,b4,b5and b6 respectivley.
+
+
+Figures
+
+Fig 1 :- CGR PC plot of order b1 and b2 (left to right)  of 'filename'.
+Fig 2 :- CGR PC plot of order b3 and b4 (left to right)  of 'filename'.
+Fig 3 :- CGR PC plot of order b5 and b6 (left to right)  of 'filename'.
+
+Fig 4 :- CGR PC plot of order b1 and b2 (left to right)  of 'filename1'.
+Fig 5 :- CGR PC plot of order b3 and b4 (left to right)  of 'filename1'.
+Fig 6 :- CGR PC plot of order b5 and b6 (left to right)  of 'filename1'.
+
+
+Fig 7:- Subtraction plot of order b1 (left) and b2 (right).
+Fig 8:- Same as fig 7 but of order b3 and b4.
+Fig 9:- Same as fig 7 but of order b5 and b6.
+
+
+
+The figures obtained  have to be modified in type of coloring and Color datamax values for a better dispaly.Sample template for six bit CGR image and subtraction plot i used is attached
+
+

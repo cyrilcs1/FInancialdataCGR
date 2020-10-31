@@ -1,0 +1,15 @@
+Stock3dmeshimages
+
+
+This program  plots three dimensional CGRimages for stock data.
+
+Input file
+ Same as for the program 'stockimageandproxindexmodified'
+
+Otput figures
+ Fig1: 3 dimensional CGRimage of order b1 for 'filename' data.
+ Fig2: 3 dimensional CGRimage of order b1 for 'filename1' data.
+
+
+You may include more lines or modify lines 542 to 546 for CGR images of other order. Sample template for six bit image i used is attached
+
